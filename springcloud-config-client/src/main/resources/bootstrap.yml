@@ -1,0 +1,19 @@
+server:
+  port: 7002
+spring:
+  application:
+    name: configclient
+  cloud:
+    config:
+      name: demo #对应config server Url中的{application}
+      profile: dev #配置环境，对应config server Url中的{profile}
+      label: master #配置分支(不配置则默认：git则是master,svn则是trunk)，
+      #uri: http://localhost:7001 #配置中心地址
+      discovery:
+        enabled: true #启用服务发现
+        service-id: configServer1 #指定要从eureka获取的config server的服务ID（即：configserverr的applicationName）
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+

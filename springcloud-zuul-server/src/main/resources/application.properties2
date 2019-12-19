@@ -1,0 +1,8 @@
+
+spring.application.name=book
+
+server.port=8081
+server.context-path=/book
+
+ribbon.eureka.enabled=false
+
